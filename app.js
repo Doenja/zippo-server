@@ -16,7 +16,7 @@ app.post('/state',  function (req, res) {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Zippo server listening at http://localhost:${port}`)
 })
 
 

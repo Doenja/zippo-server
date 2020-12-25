@@ -1,5 +1,6 @@
 const { exec } = require("child_process");
 
+// possible groups: 'living_room' | 'bed_room'
 // possible states: 'ON' | 'OFF' | 'TOGGLE'
 
 const setState = (group, state, res) => {

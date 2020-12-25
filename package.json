@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@humanoids/eslint-config": "^0.0.5",
+    "@humanoids/prettier-config": "^0.0.2",
+    "eslint": "^7.16.0",
+    "prettier": "@humanoids/prettier-config"
+  }
+}

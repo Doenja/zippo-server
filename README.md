@@ -1,1 +1,1 @@
-# zippo-server
+# Zippo server

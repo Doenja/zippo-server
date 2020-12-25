@@ -11,8 +11,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/state',  function (req, res) {
-    const { group, state } = req.query
-    setState(group, state, res);
+    const { target, setting, value } = req.query
+    setState(res, target, setting, value);
 })
 
 app.listen(port, () => {

@@ -6,7 +6,7 @@ const { exec } = require("child_process");
 // possible values for color_temp: 150 - 500
 // possible values for brightness: 0 - 254
 
-const setState = (res, target, setting, value) => {
+const setLights = (res, target, setting, value) => {
     if (!target || typeof target !== 'string') {
         console.log('Error: invalid target')
         return res.status(500).send({error: 'Invalid target'})
@@ -23,7 +23,8 @@ const setState = (res, target, setting, value) => {
     if (setting === 'brightness' && (value < 0 || value > 254)) {
         console.log('Error: invalid state, choose a value between 0 and 254')
         return res.status(500).send({error: 'Invalid state, choose a value between 0 and 254'})
-    }
+    }   
+
 
     exec(`mosquitto_pub -t zigbee2mqtt/${target}/set -m '{\"${setting}\": \"${value}\"}' -d`, (error, stdout, stderr) => {
         if (error) {
@@ -39,4 +40,4 @@ const setState = (res, target, setting, value) => {
     });    
 } 
 
-module.exports = setState;
+module.exports = setLights;

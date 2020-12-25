@@ -1,7 +1,6 @@
-const http = require('http');
 const express = require('express')
 
-const setState = require('./setState')
+const setLights = require('./setLights')
 
 const app = express()
 const port = 3000
@@ -10,9 +9,9 @@ app.get('/', function (req, res) {
     res.send('Zippo server')
 })
 
-app.post('/state',  function (req, res) {
+app.post('/setLights',  function (req, res) {
     const { target, setting, value } = req.query
-    setState(res, target, setting, value);
+    setLights(res, target, setting, value);
 })
 
 app.listen(port, () => {

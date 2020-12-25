@@ -34,8 +34,8 @@ const setState = (res, target, setting, value) => {
             console.log(`Error: ${stderr}`)
             return res.status(500).send({error: stderr})
         }
-        console.log('State changed successfully', target, state)
-        return res.status(200).send(`State changed successfully, ${target}, ${state}`)
+        console.log('State changed successfully', target, value)
+        return res.status(200).send(`State changed successfully, ${target}, ${value}`)
     });    
 } 
 

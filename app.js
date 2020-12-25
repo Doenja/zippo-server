@@ -1,14 +1,18 @@
 const http = require('http');
 const express = require('express')
 
-const toggle = require('./toggle')
+const setState = require('./setState')
 
 const app = express()
 const port = 3000
 
-app.get('/toggle', function (req, res) {
-    res.send('Zippo server, toggle')
-    toggle()
+app.get('/', function (req, res) {
+    res.send('Zippo server')
+})
+
+app.post('/state',  function (req, res) {
+    const { group, state } = req.query
+    setState(group, state, res);
 })
 
 app.listen(port, () => {

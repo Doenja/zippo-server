@@ -16,6 +16,7 @@ app.get('/', function (req, res) {
 
 router.post('/setLights', (req, res) => {
   const { target, setting, value} = req.body
+  console.log(req.body)
   setLights(res, target, setting, value);
 });
 
